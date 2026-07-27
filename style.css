@@ -6,6 +6,64 @@ body {
     
 }
 
+body {
+
+    background:
+    radial-gradient(
+        circle at top,
+        #2b2035,
+        #121018 60%
+    );
+
+}
+
+body::before {
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:
+    linear-gradient(
+        rgba(255,255,255,.03) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.03) 1px,
+        transparent 1px
+    );
+
+    background-size:40px 40px;
+
+    animation:gridMove 20s linear infinite;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+
+@keyframes gridMove {
+
+    from {
+
+        transform:translate(0,0);
+
+    }
+
+    to {
+
+        transform:translate(40px,40px);
+
+    }
+
+}
+
 /* Main sections */
 
 section {
@@ -281,11 +339,9 @@ button:hover {
 
     position:fixed;
 
-    right:25px;
+    right:30px;
 
-    top:50%;
-
-    transform:translateY(-50%);
+    top:30px;
 
     z-index:1000;
 
@@ -807,5 +863,136 @@ button:hover {
     color:#f3b7d9;
 
     cursor:pointer;
+
+}
+.particles span {
+
+    position:fixed;
+
+    width:4px;
+    height:4px;
+
+    background:#f3b7d9;
+
+    border-radius:50%;
+
+    opacity:.5;
+
+    animation:stars 8s infinite alternate;
+
+}
+
+
+
+.particles span:nth-child(1){
+    left:10%;
+    top:20%;
+}
+
+.particles span:nth-child(2){
+    left:30%;
+    top:70%;
+    animation-delay:2s;
+}
+
+.particles span:nth-child(3){
+    left:50%;
+    top:30%;
+    animation-delay:4s;
+}
+
+.particles span:nth-child(4){
+    left:80%;
+    top:60%;
+    animation-delay:1s;
+}
+
+.particles span:nth-child(5){
+    left:90%;
+    top:15%;
+    animation-delay:3s;
+}
+
+
+
+@keyframes stars {
+
+    from {
+
+        transform:
+        translateY(0)
+        scale(1);
+
+        opacity:.3;
+
+    }
+
+
+    to {
+
+        transform:
+        translateY(-30px)
+        scale(1.5);
+
+        opacity:.8;
+
+    }
+
+}
+.doodle {
+
+    position:absolute;
+
+    color:#f3b7d9;
+
+    opacity:.5;
+
+    pointer-events:none;
+
+    animation:doodleFloat 4s ease-in-out infinite;
+
+}
+
+
+.leaf {
+
+    left:5%;
+
+    top:40%;
+
+}
+
+
+.star {
+
+    right:8%;
+
+    top:25%;
+
+}
+
+
+.heart {
+
+    right:12%;
+
+    bottom:15%;
+
+}
+
+
+@keyframes doodleFloat {
+
+    0%,100% {
+
+        transform:translateY(0);
+
+    }
+
+    50% {
+
+        transform:translateY(-10px);
+
+    }
 
 }
