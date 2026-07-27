@@ -148,3 +148,32 @@ document.addEventListener("keydown", (e)=>{
 
 
 });
+/* ================= */
+/* SECTION NAVIGATION */
+/* ================= */
+
+const navButtons = document.querySelectorAll(".nav-link");
+
+
+navButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const section = document.getElementById(
+            button.dataset.target
+        );
+
+
+        if(section){
+
+            section.scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
+
+    });
+
+});

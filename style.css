@@ -996,3 +996,326 @@ button:hover {
     }
 
 }
+/* ================= */
+/* SUGGESTION BOX */
+/* ================= */
+
+
+.suggestions form {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.suggestions input,
+.suggestions textarea {
+
+    background:#121018;
+
+    color:#f7eaf5;
+
+    border:1px solid #5c4560;
+
+    border-radius:20px;
+
+    padding:15px;
+
+    font-size:16px;
+
+    font-family:Arial;
+
+}
+
+
+
+.suggestions textarea {
+
+    min-height:120px;
+
+    resize:none;
+
+}
+
+
+
+.suggestions input:focus,
+.suggestions textarea:focus {
+
+    outline:none;
+
+    border-color:#e5a6cf;
+
+    box-shadow:
+    0 0 15px rgba(229,166,207,.3);
+
+}
+/* ================= */
+/* ART GALLERY CARDS */
+/* ================= */
+
+
+.gallery {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,260px));
+
+    gap:30px;
+
+    justify-content:center;
+
+}
+
+
+
+.gallery img {
+
+    width:220px;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    border:2px solid #30283a;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.3);
+
+    transition:.3s;
+
+}
+
+
+
+.gallery img:hover {
+
+    transform:translateY(-8px) scale(1.03);
+
+    border-color:#e5a6cf;
+
+    box-shadow:
+    0 15px 35px rgba(229,166,207,.25);
+
+}
+
+
+
+/* Artwork information */
+
+.art-description {
+
+    background:#1b1824;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    border:1px solid #30283a;
+
+    margin-top:-15px;
+
+    position:relative;
+
+    z-index:2;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+
+}
+
+
+
+.art-description h3 {
+
+    margin:0 0 8px;
+
+    color:#f3b7d9;
+
+    font-size:20px;
+
+}
+
+
+
+.art-description p {
+
+    margin:0;
+
+    color:#cbb8cf;
+
+    font-size:15px;
+
+}
+
+
+
+/* Links inside art cards */
+
+.art-description a {
+
+    display:inline-flex;
+
+    margin-top:10px;
+
+    width:35px;
+
+    height:35px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#d88bb8;
+
+    color:#241823;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+
+.art-description a:hover {
+
+    transform:scale(1.15);
+
+    background:#f3b7d9;
+
+}
+/* Only h3 that comes immediately before a gallery */
+
+h3:has(+ .gallery) {
+
+    text-align:center;
+
+    color:#f3b7d9;
+
+    font-size:32px;
+
+    margin-top:80px;
+
+    margin-bottom:30px;
+
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    text-shadow:
+    0 0 15px rgba(243,183,217,.3);
+
+}
+
+
+h3:has(+ .gallery)::before,
+h3:has(+ .gallery)::after {
+
+    content:"✦";
+
+    color:#e5a6cf;
+
+    margin:0 15px;
+
+}
+/* ================= */
+/* TOP NAVIGATION */
+/* ================= */
+
+
+.site-nav {
+
+    position:fixed;
+
+    top:35px;
+
+    right:110px;
+
+    display:flex;
+
+    gap:12px;
+
+    z-index:1000;
+
+}
+
+
+
+.site-nav a {
+
+    background:#1b1824;
+
+    color:#f3b7d9;
+
+    text-decoration:none;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    border:1px solid #5c4560;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.25);
+
+}
+
+
+
+.site-nav a:hover {
+
+    background:#d88bb8;
+
+    color:#241823;
+
+    transform:translateY(-3px);
+
+}
+.nav-link {
+
+    background:#1b1824;
+
+    color:#f3b7d9;
+
+    border:1px solid #5c4560;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.25);
+
+}
+
+
+.nav-link:hover {
+
+    background:#d88bb8;
+
+    color:#241823;
+
+    transform:translateY(-3px);
+
+}
