@@ -21,46 +21,87 @@ if (socialButton && socialContainer) {
 
 }
 
+/* ================= */
+/* CHESPIN MASCOT */
+/* ================= */
+
+
 const chespin = document.getElementById("chespin");
 
 
-let x = 100;
-let y = 100;
-
-let speedX = 2;
-let speedY = 2;
+if(chespin){
 
 
-function moveChespin(){
-
-    x += speedX;
-    y += speedY;
+    let x = 100;
+    let y = 100;
 
 
-    if(x + chespin.width >= window.innerWidth || x <= 0){
+    let speedX = 2;
+    let speedY = 2;
 
-        speedX *= -1;
+
+
+    function moveChespin(){
+
+
+        x += speedX;
+        y += speedY;
+
+
+
+        if(x + chespin.width >= window.innerWidth || x <= 0){
+
+            speedX *= -1;
+
+        }
+
+
+
+        if(y + chespin.height >= window.innerHeight || y <= 0){
+
+            speedY *= -1;
+
+        }
+
+
+
+        chespin.style.left = x + "px";
+        chespin.style.top = y + "px";
+
+
+
+        requestAnimationFrame(moveChespin);
+
 
     }
 
 
-    if(y + chespin.height >= window.innerHeight || y <= 0){
 
-        speedY *= -1;
-
-    }
+    moveChespin();
 
 
-    chespin.style.left = x + "px";
-    chespin.style.top = y + "px";
+
+    /* ================= */
+    /* CHESPIN SOUND */
+    /* ================= */
 
 
-    requestAnimationFrame(moveChespin);
+    const chespinSound = new Audio("sounds/fennekin.mp3");
+
+chespin.addEventListener("click", () => {
+
+    console.log("Chespin clicked!");
+
+    chespinSound.currentTime = 0;
+
+    chespinSound.play()
+        .then(() => console.log("Sound played!"))
+        .catch(err => console.error(err));
+
+});
+
 
 }
-
-
-moveChespin();
 
 document.addEventListener("click", function(e){
 

@@ -622,7 +622,9 @@ button:hover {
 
     z-index:999;
 
-    pointer-events:none;
+    pointer-events:auto;
+
+    cursor:pointer;
 
 }
 
@@ -1056,7 +1058,7 @@ button:hover {
 
 }
 /* ================= */
-/* ART GALLERY CARDS */
+/* ART GALLERY FIX */
 /* ================= */
 
 
@@ -1065,11 +1067,13 @@ button:hover {
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(260px,260px));
+    220px 260px 220px 260px;
 
-    gap:30px;
+    gap:25px;
 
     justify-content:center;
+
+    align-items:start;
 
 }
 
@@ -1085,10 +1089,10 @@ button:hover {
 
     border-radius:25px;
 
-    border:2px solid #30283a;
+    border:1px solid #30283a;
 
     box-shadow:
-    0 10px 25px rgba(0,0,0,.3);
+    0 10px 25px rgba(0,0,0,.25);
 
     transition:.3s;
 
@@ -1098,18 +1102,13 @@ button:hover {
 
 .gallery img:hover {
 
-    transform:translateY(-8px) scale(1.03);
+    transform:scale(1.05);
 
     border-color:#e5a6cf;
-
-    box-shadow:
-    0 15px 35px rgba(229,166,207,.25);
 
 }
 
 
-
-/* Artwork information */
 
 .art-description {
 
@@ -1121,14 +1120,7 @@ button:hover {
 
     border:1px solid #30283a;
 
-    margin-top:-15px;
-
-    position:relative;
-
-    z-index:2;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.25);
+    min-height:90px;
 
 }
 
@@ -1140,8 +1132,6 @@ button:hover {
 
     color:#f3b7d9;
 
-    font-size:20px;
-
 }
 
 
@@ -1152,33 +1142,32 @@ button:hover {
 
     color:#cbb8cf;
 
-    font-size:15px;
-
 }
-
-
-
-/* Links inside art cards */
+/* ================= */
+/* ART SOCIAL LINKS */
+/* ================= */
 
 .art-description a {
 
-    display:inline-flex;
+    width:40px;
 
-    margin-top:10px;
+    height:40px;
 
-    width:35px;
-
-    height:35px;
-
-    align-items:center;
+    display:flex;
 
     justify-content:center;
 
-    border-radius:50%;
+    align-items:center;
+
+    margin-top:12px;
 
     background:#d88bb8;
 
     color:#241823;
+
+    border-radius:50%;
+
+    font-size:20px;
 
     text-decoration:none;
 
@@ -1187,46 +1176,11 @@ button:hover {
 }
 
 
-
 .art-description a:hover {
 
     transform:scale(1.15);
 
     background:#f3b7d9;
-
-}
-/* Only h3 that comes immediately before a gallery */
-
-h3:has(+ .gallery) {
-
-    text-align:center;
-
-    color:#f3b7d9;
-
-    font-size:32px;
-
-    margin-top:80px;
-
-    margin-bottom:30px;
-
-    font-weight:bold;
-
-    letter-spacing:1px;
-
-    text-shadow:
-    0 0 15px rgba(243,183,217,.3);
-
-}
-
-
-h3:has(+ .gallery)::before,
-h3:has(+ .gallery)::after {
-
-    content:"✦";
-
-    color:#e5a6cf;
-
-    margin:0 15px;
 
 }
 /* ================= */
@@ -1317,5 +1271,122 @@ h3:has(+ .gallery)::after {
     color:#241823;
 
     transform:translateY(-3px);
+
+}
+/* ================= */
+/* FOOTER */
+/* ================= */
+
+footer{
+
+    margin-top:120px;
+
+    padding:60px 20px;
+
+    background:#181320;
+
+    border-top:1px solid #30283a;
+
+}
+
+
+.footer-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+
+.footer-content h3{
+
+    color:#f3b7d9;
+
+    font-size:28px;
+
+}
+
+
+.footer-content p{
+
+    color:#cbb8cf;
+
+}
+
+
+.footer-tech{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin:30px 0;
+
+}
+
+
+.footer-tech span{
+
+    background:#241d30;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    border:1px solid #4a3b58;
+
+    color:#f3b7d9;
+
+}
+
+
+.footer-tech i{
+
+    margin-right:8px;
+
+}
+
+
+.footer-links{
+
+    margin:30px 0;
+
+}
+
+
+.footer-links a{
+
+    color:#f3b7d9;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+
+.footer-links a:hover{
+
+    color:white;
+
+}
+
+
+.copyright{
+
+    margin-top:35px;
+
+    font-size:14px;
+
+    opacity:.7;
 
 }
